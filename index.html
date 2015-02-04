@@ -5,6 +5,7 @@
 <title>主页展示</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/jquery.fullPage.css">
+<link href="css/fancybox.css" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
 <script src="js/jquery-ui.js"></script>
 <script src="js/jquery.fullPage.min.js"></script>
@@ -21,13 +22,28 @@
         </dl>
     </div>
     <div class="section se_2" id="section1">
-    	
+        <div class="sliderbox mid">
+            <div class="photobox mid" id="glSlide">
+                <ul class="clearfix ">
+                    <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
+                    <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
+                    <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
+                    <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
+                    <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
+                    <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
+                </ul>
+            </div>
+            <a href="javascript:;" class="last" id="last">s</a>
+            <a href="javascript:;" class="next" id="next">x</a>
+        </div>
     </div>
     <div class="section" id="section2"></div>
     <div class="section" id="section3"></div>
 </div>
 
 </body>
+<script src="js/glslide.js"></script>
+<script src="js/jquery.fancybox-1.3.4.pack.js"></script>
 <script>
 $(document).ready(function() {
 	$('#fullpage').fullpage({
@@ -38,5 +54,32 @@ $(document).ready(function() {
 	});
 
 });
+
+$("#glSlide").glSlide({
+    isWinLoad:true,//是否window onload后加载
+	productScrollWitch:"ul",//相对this选择器，产生滚动条的大div
+	list:"ul > li",//相对this选择器，list对象
+	seeColumn:4,//可视范围分列数目
+	step:1,//滚动步长
+	speed:"normal",//滚动速度
+	orientation:"left",//自动轮播开启时会以设定方向滚动，否则只作为待滚定位，只有上下，top,bottom
+	isAutoPlay:5000,//自动播放时间间隔
+	isBtn:{
+		left:"#last",//向上按钮
+		right:"#next",//向下按钮
+		isChangeState:true//按钮事件是否触发滚动方向状态
+	}//按钮树配置
+});
+
+$("#glSlide a").fancybox({
+		'transitionIn'	: 'none',
+		'transitionOut'	: 'none',
+		'overlayColor'  :'#101010',
+		'scrolling'         : 'no',
+		'centerOnScroll'    :true,
+		'showNavArrows' : true
+	});
+	
+
 </script>
 </html>

@@ -16,8 +16,12 @@ body{ font-family:"微软雅黑";}
 .info h3{ font-size:32px; font-weight:bold; text-shadow:2px 2px 2px #333; line-height:46px;}
 
 .se_2{ }
-
-
+.sliderbox{width:1040px;  position:relative;}
+.photobox{ overflow:hidden;}
+.photobox li{width:250px; float:left; margin-left:10px;}
+.last,.next{display:block; width:45px; height:80px; background:url(../images/lnicon.png) no-repeat; overflow:hidden; text-indent:-10000px; position:absolute; top:40px;}
+.last{ left:-70px;}
+.next{ background-position:-55px 0; right:-70px;}
 
 
 
