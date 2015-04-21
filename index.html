@@ -6,6 +6,7 @@
 <meta name="baidu-site-verification" content="okyiPUDBsV" />
 <meta name="keywords" content="Miko的主页、刘舒的主页" />
 <link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="css/animation.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/jquery.fullPage.css">
 <link href="css/fancybox.css" rel="stylesheet">
 <script src="js/jquery.min.js"></script>
@@ -14,17 +15,35 @@
 </head>
 
 <body>
+<div class="nav">
+    <ul>
+    	<li><a href="#"><span class="z-front"><img src="images/logo-header.png"></span><span class="z-bottom"><img src="images/logo-header.png"></span></a></li>
+      <li><a href="#"><span class="z-front">主页</span><span class="z-bottom">主页</span></a></li>
+      <li><a href="/blog/"><span class="z-front">我的博客</span><span class="z-bottom">我的博客</span></a></li>
+      <li><a href="#"><span class="z-front">MIKO</span><span class="z-bottom">MIKO</span></a></li>
+      <li><a href="#"><span class="z-front">关于我</span><span class="z-bottom">关于我</span></a></li>
+    </ul>
+</div>
 <div id="fullpage">
     <div class="section se_1" id="section0">
-    	<dl class="info">
-        	<dd><img class="touxiang mid" src="images/touxiang.png"></dd>
-            <dt>
-            	<h3>我的主页啊</h3>
-                <a href="http://mikomoon.com/blog">我的博客</a>
-            </dt>
-        </dl>
+    	<div class="text">
+      	<span class="text-m a-zoom delay-1"></span>
+        <span class="text-i a-zoom delay-2"></span>
+        <span class="text-k a-zoom delay-3"></span>
+        <span class="text-o a-zoom delay-4"></span>
+        <span class="text-m a-zoom delay-5"></span>
+        <span class="text-o a-zoom delay-6"></span>
+        <span class="text-o a-zoom delay-7"></span>
+        <span class="text-n a-zoom delay-8"></span>
+        <span class="text-dot a-zoom delay-9"></span>
+        <span class="text-c a-zoom delay-10"></span>
+        <span class="text-o a-zoom delay-11"></span>
+        <span class="text-m a-zoom delay-12"></span>
+      </div>
+      <a href="javascript:;" class="page-next a-next">下一页</a>
     </div>
     <div class="section se_2" id="section1">
+    		
         <div class="sliderbox mid">
             <div class="photobox mid" id="glSlide">
                 <ul class="clearfix ">
@@ -54,6 +73,20 @@ $(document).ready(function() {
 		anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', 'lastPage'],
 		menu: '#menu',
 		scrollingSpeed: 800
+	});
+	
+	$(".se_1").mousemove(function(e){
+		var position=$(this).css("background-position");
+		var x=e.clientX/80,
+				y=e.clientY/80,
+				width=parseInt($(window).width()),
+				height=parseInt($(window).height()),
+				now_x=-(1920-width)/2,
+				now_y=-(1200-height)/2;
+		$(this).css("background-position",(x+now_x)+"px "+(y+now_y)+"px");	
+	});
+	$(".page-next").click(function(){
+		$.fn.fullpage.moveSectionDown();
 	});
 
 });
