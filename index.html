@@ -18,10 +18,10 @@
 <div class="nav">
     <ul>
     	<li><a href="#"><span class="z-front"><img src="images/logo-header.png"></span><span class="z-bottom"><img src="images/logo-header.png"></span></a></li>
-      <li><a href="#"><span class="z-front">主页</span><span class="z-bottom">主页</span></a></li>
+      <li><a href="javascript:;" id="index"><span class="z-front">主页</span><span class="z-bottom">主页</span></a></li>
+      <li><a href="javascript:;" id="index-2"><span class="z-front">关于我</span><span class="z-bottom">关于我</span></a></li>
+      <li><a href="javascript:;" id="index-3"><span class="z-front">DEMO</span><span class="z-bottom">DEMO</span></a></li>
       <li><a href="/blog/"><span class="z-front">我的博客</span><span class="z-bottom">我的博客</span></a></li>
-      <li><a href="#"><span class="z-front">MIKO</span><span class="z-bottom">MIKO</span></a></li>
-      <li><a href="#"><span class="z-front">关于我</span><span class="z-bottom">关于我</span></a></li>
     </ul>
 </div>
 <div id="fullpage">
@@ -43,8 +43,26 @@
       <a href="javascript:;" class="page-next a-next">下一页</a>
     </div>
     <div class="section se_2" id="section1">
-    		
-        <div class="sliderbox mid">
+    		<div class="map">
+        	<ins class="a-heart"></ins>
+          <div class="line a-line delay-1"></div>
+          <div class="msg a-box-w delay-6">
+          	<p class="a-p delay-p1">位置：福州 （FU ZHOU）</p>
+            <p class="a-p delay-p2">昵称：Miko.shu</p>
+            <p class="a-p delay-p3">专业：电子信息工程</p>
+            <p class="a-p delay-p4">婚否：未婚</p>
+            <p class="a-p delay-p5" style=" font-size:14px; color:#F00;">(妹纸妹纸~我要妹纸~~)</p>
+            <p class="a-p delay-p6">最想去的地方：</p>
+            <p class="a-p delay-p7" style=" font-size:14px; color:#F00;">很多啦，基本就没去旅游过好吗！</p>
+            <p class="a-p delay-p8">工作：网龙公司（网页编辑）</p>
+            <p class="a-p delay-p9">关于本站：</p>
+            <p class="a-p delay-p10">练手而已啦，请多指教~</p>
+            <p class="a-p delay-p11">联系方式：</p>
+            <p class="a-p delay-p12">452753617@qq.com</p>
+            <p class="a-p delay-p13" style=" font-size:14px; color:#F00;">(ps:最好是妹纸！我要妹纸！！！)</p>
+          </div>
+        </div>
+        <!--<div class="sliderbox mid">
             <div class="photobox mid" id="glSlide">
                 <ul class="clearfix ">
                     <li><a href="images/imgbif.jpg" rel="group1"><img src="images/img.jpg"></li>
@@ -57,10 +75,39 @@
             </div>
             <a href="javascript:;" class="last" id="last">s</a>
             <a href="javascript:;" class="next" id="next">x</a>
-        </div>
+        </div>-->
+        <a href="javascript:;" class="page-next a-next">下一页</a>
     </div>
-    <div class="section" id="section2"></div>
-    <div class="section" id="section3"></div>
+    <div class="section se_3" id="section2">
+    	<h3>简单的DEMO分享</h3>
+      <div class="mid case">  
+        <dl class="case1 a-case delay-2">
+          <dd><img src="images/baymax.jpg"></dd>
+          <dt><a href="/blog/2015/03/13/CSS3大白机器人/">单纯的使用css3的圆角和阴影效果实现的一个大白机器人(●—●)</a></dt>
+        </dl>
+        <dl class="case2 a-case delay-4">
+          <dd><img src="images/timechoose.jpg"></dd>
+          <dt><a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/">这是一个基于Iscroll5 和jquery的仿安卓手机触摸式时间插件，主要用到iscroll的snap属性......</a></dt>
+        </dl>
+        <dl class="case3 a-case delay-6">
+          <dd><img src="images/clock.jpg"></dd>
+          <dt><a href="/blog/2015/03/12/-CSS3-JS实现时钟效果/">基于原生js和css3旋转效果模拟的时钟效果......</a></dt>
+        </dl>
+        <dl class="case4 a-case delay-8">
+          <dd><img src="images/canvas.jpg"></dd>
+          <dt><a href="/blog/2015/02/28/使用canvas实现刮奖刮开效果/">这是简单的使用画布模仿现在热门的刮奖效果的小demo...</a></dt>
+        </dl>
+        <dl class="case5 a-case delay-10">
+          <dd><img src="images/no_img.jpg"></dd>
+          <dt><a href="javascript:alert('暂无demo，敬请期待~');">暂无demo，敬请期待~</a></dt>
+        </dl>
+        <dl class="case6 a-case delay-12">
+          <dd><img src="images/no_img.jpg"></dd>
+          <dt><a href="javascript:alert('暂无demo，敬请期待~');">暂无demo，敬请期待~</a></dt>
+        </dl>
+      </div>
+    </div>
+    <!--<div class="section" id="section3"></div>-->
 </div>
 
 </body>
@@ -87,6 +134,15 @@ $(document).ready(function() {
 	});
 	$(".page-next").click(function(){
 		$.fn.fullpage.moveSectionDown();
+	});
+	$('#index').click(function(e){ //导航首页跳转
+		$.fn.fullpage.moveTo(1, 0);
+	});
+  $('#index-2').click(function(e){ //导航首页跳转
+		$.fn.fullpage.moveTo(2, 1);
+	});
+	$('#index-3').click(function(e){ //导航首页跳转
+		$.fn.fullpage.moveTo(3, 2);
 	});
 
 });
