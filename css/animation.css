@@ -157,7 +157,8 @@ to { }
 68%{opacity:1; left:1150px; top:390px; transform:rotate(5deg);}
 69%{opacity:1; left:1150px; top:390px; transform:rotate(0deg);}
 70%{opacity:1; left:1150px; top:390px; transform:rotate(0deg); transform:scale(1,1);}
-100%{ opacity:1; left:1190px; top:280px; transform:scale(0,0); }
+90%{ opacity:1; left:2000px; top:0px; transform:scale(1,1); }
+100%{ opacity:1; left:2000px; top:0px; transform:scale(0,0); }
 }
 
 @-webkit-keyframes cloud0
@@ -190,7 +191,7 @@ to { }
 90%{ opacity:1; left:2000px; top:0px; transform:scale(1,1); }
 100%{ opacity:1; left:2000px; top:0px; transform:scale(0,0); }
 }
-.active .a-cloud0{animation:cloud0 20s linear  alternate infinite; -webkit-animation:cloud0 20s linear 1s;}
+.active .a-cloud0{animation:cloud0 20s linear 1s; -webkit-animation:cloud0 20s linear 1s;}
 
 @keyframes rain
 {
@@ -208,8 +209,8 @@ to { opacity:1; top:0px;}
 
 @keyframes grow
 {
-from {opacity:1;  height:0;  }
-to { opacity:1; }
+from {opacity:1;  height:0;transform:scale(0,1);  }
+to { opacity:1;transform:scale(1,1); }
 }
 
 @-webkit-keyframes grow
