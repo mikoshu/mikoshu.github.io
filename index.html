@@ -10,9 +10,6 @@
 <link href="css/animation.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/jquery.fullPage.css">
 <link rel="SHORTCUT ICON" href="images/miko.ico" />
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-ui.js"></script>
-<script src="js/jquery.fullPage.min.js"></script>
 </head>
 
 <body>
@@ -133,66 +130,16 @@
 </div>
 
 </body>
-<script src="js/glslide.js"></script>
+<script src="js/sea.js"></script>
 <script> 
-$(document).ready(function() {
-	$('#fullpage').fullpage({
-		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#fff'],
-		anchors: ['1stPage', '2ndPage', '3rdPage', '4thpage', 'lastPage'],
-		menu: '#menu',
-		scrollingSpeed: 800
-	});
-	
-	$(".se_1").mousemove(function(e){    //背景随鼠标移动
-		var position=$(this).css("background-position");
-		var x=e.clientX/80,
-				y=e.clientY/80,
-				width=parseInt($(window).width()),
-				height=parseInt($(window).height()),
-				now_x=-(1920-width)/2,
-				now_y=-(1200-height)/2;
-		$(this).css("background-position",(x+now_x)+"px "+(y+now_y)+"px");	
-	});
-	$(".page-next").click(function(){
-		$.fn.fullpage.moveSectionDown();
-	});
-	$('#index').click(function(e){ //导航首页跳转
-		$.fn.fullpage.moveTo(1, 0);
-	});
-  $('#index-2').click(function(e){ //导航首页跳转
-		$.fn.fullpage.moveTo(2, 1);
-	});
-	$('#index-3').click(function(e){ //导航首页跳转
-		$.fn.fullpage.moveTo(3, 2);
-	});
-
-});
-
-$("#glSlide").glSlide({
-    isWinLoad:true,//是否window onload后加载
-	productScrollWitch:"ul",//相对this选择器，产生滚动条的大div
-	list:"ul > li",//相对this选择器，list对象
-	seeColumn:4,//可视范围分列数目
-	step:1,//滚动步长
-	speed:"normal",//滚动速度
-	orientation:"left",//自动轮播开启时会以设定方向滚动，否则只作为待滚定位，只有上下，top,bottom
-	isAutoPlay:false,//自动播放时间间隔
-	isBtn:{
-		left:"#last",//向上按钮
-		right:"#next",//向下按钮
-		isChangeState:true//按钮事件是否触发滚动方向状态
-	}//按钮树配置
-});
-
-$("#glSlide a").fancybox({
-		'transitionIn'	: 'none',
-		'transitionOut'	: 'none',
-		'overlayColor'  :'#101010',
-		'scrolling'         : 'no',
-		'centerOnScroll'    :true,
-		'showNavArrows' : true
-	});
-	
-
+	 seajs.config({
+    base: "./js/",
+    alias: {
+      "jquery": "jquery.min.js",
+			"jquery-ui": "jquery-ui.js",
+			"jquery.fullPage": "jquery.fullPage.min.js"
+    }
+  }); 
+ seajs.use("main");
 </script>
 </html>
