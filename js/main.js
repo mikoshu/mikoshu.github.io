@@ -1,8 +1,8 @@
 // JavaScript Document
 define(function(require, exports, module) {
-	require('jquery');
-	require('jquery-ui');
-	require('jquery.fullPage.min');
+	var jQuery = require('jquery');
+	//require('jquery-ui');
+	var fullpage = require('jquery.fullPage.min');
 	
 $(document).ready(function() {
 	$('#fullpage').fullpage({
