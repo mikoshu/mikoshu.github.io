@@ -1,3 +1,8 @@
+/*
+ * Author: Miko
+ * Version: 0.1.0
+ * Compile Date: 2015-10-13 14:23
+*/ 
 // JavaScript Document
 define(function(require, exports, module) {
 	var jQuery = require('jquery');
