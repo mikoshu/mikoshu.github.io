@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>[超简易瀑布流] | Miko的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="好久没写东西了，今天有点时间，刚好看到有一个项目要用到瀑布流，突发奇想写了一个超级简单的瀑布流插件，大家多多指教了~~~点击查看demo
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset='utf-8'&gt;
+&lt;title&gt;超简易瀑布流&lt;/title&gt;
+&lt;style&gt;
+body,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[超简易瀑布流]">
+<meta property="og:url" content="http://mikomoon.com/blog/blog/2015/06/01/-超简易瀑布流/">
+<meta property="og:site_name" content="Miko的博客">
+<meta property="og:description" content="好久没写东西了，今天有点时间，刚好看到有一个项目要用到瀑布流，突发奇想写了一个超级简单的瀑布流插件，大家多多指教了~~~点击查看demo
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset='utf-8'&gt;
+&lt;title&gt;超简易瀑布流&lt;/title&gt;
+&lt;style&gt;
+body,">
+<meta property="og:image" content="http://7u2sas.com1.z0.glb.clouddn.com/images/waterfall.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[超简易瀑布流]">
+<meta name="twitter:description" content="好久没写东西了，今天有点时间，刚好看到有一个项目要用到瀑布流，突发奇想写了一个超级简单的瀑布流插件，大家多多指教了~~~点击查看demo
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset='utf-8'&gt;
+&lt;title&gt;超简易瀑布流&lt;/title&gt;
+&lt;style&gt;
+body,">
+
+  
+  
+    <link rel="icon" href="http://mikomoon.com/images/miko.ico">
+  
+  <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/blog/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikomoon.com">主页</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/html/">html</a></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikomoon.com">关于我</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="q" value="site:http://mikomoon.com/blog"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/blog/categories/html/">html</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post--超简易瀑布流" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      [超简易瀑布流]
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/blog/2015/06/01/-超简易瀑布流/" class="article-date">
+  <time datetime="2015-06-01T09:35:23.000Z" itemprop="datePublished">6月 1 2015</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="http://7u2sas.com1.z0.glb.clouddn.com/images/waterfall.jpg" alt="超简易瀑布流（waterfall）"></p>
+<p>好久没写东西了，今天有点时间，刚好看到有一个项目要用到瀑布流，突发奇想写了一个超级简单的瀑布流插件，大家多多指教了~~~<br><a href="http://7u2sas.com1.z0.glb.clouddn.com/demo/waterfall.shtml" target="_blank">点击查看demo</a></p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">title</span>&gt;</span>超简易瀑布流<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+<span class="tag">body</span>, <span class="tag">div</span>, <span class="tag">dl</span>, <span class="tag">dt</span>, <span class="tag">dd</span>, <span class="tag">ul</span>, <span class="tag">ol</span>, <span class="tag">li</span>, <span class="tag">h1</span>, <span class="tag">h2</span>, <span class="tag">h3</span>, <span class="tag">h4</span>, <span class="tag">h5</span>, <span class="tag">h6</span>, <span class="tag">pre</span>, <span class="tag">form</span>, <span class="tag">fieldset</span>, <span class="tag">input</span>, <span class="tag">textarea</span>, <span class="tag">p</span>, <span class="tag">blockquote</span>, <span class="tag">th</span>, <span class="tag">td</span> ,<span class="tag">span</span>, <span class="tag">object</span>, <span class="tag">iframe</span><span class="rules">{ <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule">}</span></span> <span class="tag">table</span> <span class="rules">{ <span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>; <span class="rule"><span class="attribute">border-spacing</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule">}</span></span>
+<span class="tag">fieldset</span>, <span class="tag">img</span> <span class="rules">{ <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">0</span></span></span>; <span class="rule">}</span></span>
+<span class="tag">ol</span>, <span class="tag">ul</span> <span class="rules">{ <span class="rule"><span class="attribute">list-style</span>:<span class="value"> none</span></span>; <span class="rule">}</span></span>
+<span class="tag">h1</span>, <span class="tag">h2</span>, <span class="tag">h3</span>, <span class="tag">h4</span>, <span class="tag">h5</span>, <span class="tag">h6</span> <span class="rules">{ <span class="rule"><span class="attribute">font-weight</span>:<span class="value"> normal</span></span>; <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">100%</span></span></span>; <span class="rule">}</span></span>
+<span class="tag">q</span><span class="pseudo">:before</span>, <span class="tag">q</span><span class="pseudo">:after</span> <span class="rules">{ <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>; <span class="rule">}</span></span>
+<span class="class">.clearfix</span><span class="pseudo">:after</span><span class="rules">{ <span class="rule"><span class="attribute">content</span>:<span class="value"><span class="string">""</span></span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">0</span></span></span>; <span class="rule"><span class="attribute">visibility</span>:<span class="value">hidden</span></span>; <span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>; <span class="rule"><span class="attribute">clear</span>:<span class="value">both</span></span>;<span class="rule">}</span></span>
+<span class="class">.clearfix</span><span class="rules">{ <span class="rule"><span class="attribute">zoom</span>:<span class="value"><span class="number">1</span></span></span>;<span class="rule">}</span></span>
+
+<span class="comment">/*start*/</span>
+<span class="class">.box</span><span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">1000px</span></span></span>; <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto auto auto</span></span>;<span class="rule">}</span></span>
+<span class="class">.add-btn</span><span class="rules">{ <span class="rule"><span class="attribute">display</span>:<span class="value">block</span></span>; <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">20px</span> auto auto auto</span></span>; <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">90px</span></span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">30px</span></span></span>; <span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>; <span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">30px</span></span></span>; <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">16px</span></span></span>; <span class="rule"><span class="attribute">background</span>:<span class="value"><span class="hexcolor">#C33</span></span></span>; <span class="rule"><span class="attribute">border-radius</span>:<span class="value"><span class="number">10px</span></span></span>; <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>; <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#fff</span></span></span>;<span class="rule">}</span></span>
+<span class="class">.column</span> <span class="tag">img</span><span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span></span></span>;<span class="rule">}</span></span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"box "</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"waterfall"</span> <span class="attribute">class</span>=<span class="value">"clearfix"</span>&gt;</span>
+
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:;"</span> <span class="attribute">class</span>=<span class="value">"add-btn"</span> <span class="attribute">id</span>=<span class="value">"add"</span>&gt;</span>加载更多<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+<span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+    <span class="built_in">document</span>.getElementById(<span class="string">"add"</span>).onclick = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+            waterFall();        
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">waterFall</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> wf = <span class="built_in">document</span>.getElementById(<span class="string">"waterfall"</span>),
+            wf_len = <span class="number">4</span>, <span class="comment">//列数</span>
+            wf_data = <span class="number">2</span>, <span class="comment">//每列添加数据条数</span>
+            wf_space = <span class="number">10</span>,<span class="comment">//每列左右间隔，单位px</span>
+            wf_bottom = <span class="number">20</span>,<span class="comment">//每列元素上下间隔，单位px</span>
+            wf_boxWidth = <span class="built_in">parseInt</span>(wf.offsetWidth),
+            wf_width = <span class="built_in">parseInt</span>((wf_boxWidth-((wf_len-<span class="number">1</span>)*wf_space))/wf_len);
+    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;wf_len;i++){  <span class="comment">//循环</span>
+        <span class="keyword">var</span> column = <span class="built_in">document</span>.createElement(<span class="string">"div"</span>);
+        column.id = <span class="string">"column-"</span>+i;
+        column.className = <span class="string">"column"</span>;
+        column.style.width = wf_width+<span class="string">"px"</span>;
+        column.style.cssFloat = <span class="string">"left"</span>;
+        column.style.styleFloat = <span class="string">"left"</span>; <span class="comment">//兼容IE</span>
+        column.style.overflow = <span class="string">"hidden"</span>;
+        <span class="keyword">if</span>(i===<span class="number">0</span>){
+            column.style.marginLeft = <span class="number">0</span>;    
+        }<span class="keyword">else</span>{
+            column.style.marginLeft = wf_space+<span class="string">"px"</span>;        
+        }
+        wf.appendChild(column);
+        <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;wf_data;j++){
+            <span class="keyword">var</span> dom = <span class="built_in">document</span>.getElementById(<span class="string">"column-"</span>+i);
+            <span class="keyword">var</span> node=<span class="built_in">document</span>.createElement(<span class="string">"div"</span>);
+            node.style.marginBottom = wf_bottom+<span class="string">"px"</span>;
+            <span class="keyword">var</span> img =<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random()*<span class="number">5</span>); <span class="comment">//随机图片名称</span>
+            node.innerHTML = <span class="string">'&lt;img src="http://7u2sas.com1.z0.glb.clouddn.com/images/img'</span>+img+<span class="string">'.jpg"&gt;'</span>; <span class="comment">//需要插入的内容,结构。可在css里控制样式</span>
+            dom.appendChild(node);
+
+        }    
+    }    
+}
+
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>大家可以在node.innerHTML里自己添加需要的结构，思路很简单，就是设置几个固定宽度的列div分别向右浮动，然后把需要的数据分别插入不同的列里，这样其实每个列的内容是分离的。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://mikomoon.com/blog/2015/06/01/-超简易瀑布流/" data-id="dzxcc5boaua2nb2v" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/javascript/">javascript</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post--超简易瀑布流" data-title="[超简易瀑布流]" data-url="http://mikomoon.com/blog/2015/06/01/-超简易瀑布流/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'mikomoon'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="/blog/"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="/blog/"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="/blog/"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman"><i id="icon-github" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="weibo" href="/blog/"><i id="icon-weibo" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/blog/"><i id="icon-rss" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2015/05/12/使用css3制作圆形导航/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">使用css3制作圆形导航</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post">
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/06/01/-超简易瀑布流/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/waterfall.jpg
+)" alt="[超简易瀑布流]" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/06/01/-超简易瀑布流/" class="title">[超简易瀑布流]</a></p>
+              <p class="item-date"><time datetime="2015-06-01T09:35:23.000Z" itemprop="datePublished">6月 1 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/05/12/使用css3制作圆形导航/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/step0.png
+)" alt="使用css3制作圆形导航" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/05/12/使用css3制作圆形导航/" class="title">使用css3制作圆形导航</a></p>
+              <p class="item-date"><time datetime="2015-05-12T03:42:42.000Z" itemprop="datePublished">5月 12 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/20/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/blog/2015/03/20/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-03-20T11:04:50.432Z" itemprop="datePublished">3月 20 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/timechoose.jpg
+)" alt="iscroll和jq实现安卓时间选择效果" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/" class="title">iscroll和jq实现安卓时间选择效果</a></p>
+              <p class="item-date"><time datetime="2015-03-20T10:54:19.000Z" itemprop="datePublished">3月 20 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/13/CSS3大白机器人/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/baymax.jpg
+)" alt="CSS3大白机器人" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/13/CSS3大白机器人/" class="title">CSS3大白机器人</a></p>
+              <p class="item-date"><time datetime="2015-03-13T08:46:48.000Z" itemprop="datePublished">3月 13 2015</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iscroll-js-CSS3/">iscroll js CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/CSS3/" style="font-size: 20.00px;">CSS3</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/canvas/" style="font-size: 10.00px;">canvas</a><a href="/blog/tags/iscroll-js-CSS3/" style="font-size: 10.00px;">iscroll js CSS3</a><a href="/blog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/blog/tags/移动端/" style="font-size: 10.00px;">移动端</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/blog/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Miko shu</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+
+
+<script src="/blog/js/html-patch.js" type="text/javascript"></script>
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

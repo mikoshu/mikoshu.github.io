@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>图片预加载插件 | Miko的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="感觉自己最近越来越懒散了，一直没有好好的写过什么东西。正好前几次的项目都是h5页面，基本都是使用swiper插件和css3动画来完成。效果就类似易企秀生成的页面效果。不过这类页面一般都一个特点，那就是页面中有大量的图片，如果图片压缩不到位或者网络欠佳，很可能就会出现页面已经开始动画，但是图片没有加载完全的情况。
+  为了避免这类情况，不得不去调用一个预加载插件，这里，我简化了之前同事写的一个图片预">
+<meta property="og:type" content="article">
+<meta property="og:title" content="图片预加载插件">
+<meta property="og:url" content="http://mikomoon.com/blog/2015/10/31/imgPreLoad/index.html">
+<meta property="og:site_name" content="Miko的博客">
+<meta property="og:description" content="感觉自己最近越来越懒散了，一直没有好好的写过什么东西。正好前几次的项目都是h5页面，基本都是使用swiper插件和css3动画来完成。效果就类似易企秀生成的页面效果。不过这类页面一般都一个特点，那就是页面中有大量的图片，如果图片压缩不到位或者网络欠佳，很可能就会出现页面已经开始动画，但是图片没有加载完全的情况。
+  为了避免这类情况，不得不去调用一个预加载插件，这里，我简化了之前同事写的一个图片预">
+<meta property="og:updated_time" content="2015-10-30T17:01:46.375Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="图片预加载插件">
+<meta name="twitter:description" content="感觉自己最近越来越懒散了，一直没有好好的写过什么东西。正好前几次的项目都是h5页面，基本都是使用swiper插件和css3动画来完成。效果就类似易企秀生成的页面效果。不过这类页面一般都一个特点，那就是页面中有大量的图片，如果图片压缩不到位或者网络欠佳，很可能就会出现页面已经开始动画，但是图片没有加载完全的情况。
+  为了避免这类情况，不得不去调用一个预加载插件，这里，我简化了之前同事写的一个图片预">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/" class="logo"></a>
+          </h1>
+          
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="/">主页</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/html/">html</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/生活/">生活</a></li></ul>
+                  
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikomoon.com">关于我</a></li>
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://mikomoon.com/blog"></form>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/blog/categories/html/">html</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-imgPreLoad" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      图片预加载插件
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/blog/2015/10/31/imgPreLoad/" class="article-date">
+  <time datetime="2015-10-30T16:38:07.000Z" itemprop="datePublished">10月 31 2015</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p>  感觉自己最近越来越懒散了，一直没有好好的写过什么东西。正好前几次的项目都是h5页面，基本都是使用swiper插件和css3动画来完成。效果就类似易企秀生成的页面效果。不过这类页面一般都一个特点，那就是页面中有大量的图片，如果图片压缩不到位或者网络欠佳，很可能就会出现页面已经开始动画，但是图片没有加载完全的情况。</p>
+<p>  为了避免这类情况，不得不去调用一个预加载插件，这里，我简化了之前同事写的一个图片预加载插件。<br>  代码如下：</p>
+<pre><code><span class="comment">// JavaScript Document</span>
+<span class="keyword">var</span> IMGPATH = <span class="string">"image/"</span> <span class="comment">//图片路径前缀 方便控制图片路径</span>
+<span class="comment">//图片名称数组</span>
+<span class="keyword">var</span> IMG = [
+    <span class="string">"bg1-2.jpg"</span>,
+    <span class="string">"bg1-3.jpg"</span>,
+        <span class="string">"bg1-4.jpg"</span>,
+        <span class="string">"bg1-5.jpg"</span>,
+        <span class="string">"bg2-1.jpg"</span>,
+        <span class="string">"bg2-2.jpg"</span>,
+        <span class="string">"bg2-3.jpg"</span>,
+        <span class="string">"bg2-4.jpg"</span>,
+        <span class="string">"bg3-1.jpg"</span>,
+        <span class="string">"bg3-1.jpg"</span>,
+        <span class="string">"bg4-1.jpg"</span>,
+        <span class="string">"bg6-1.jpg"</span>,
+        <span class="string">"bg6-2.jpg"</span>,
+        <span class="string">"bg6-3.jpg"</span>,
+        <span class="string">"bg6-4.jpg"</span>,
+        <span class="string">"bg6-5.jpg"</span>,
+        <span class="string">"bg5.jpg"</span>,
+        <span class="string">"about.jpg"</span>,
+        <span class="string">"back.png"</span>,
+        <span class="string">"chanye.jpg"</span>,
+        <span class="string">"connect.jpg"</span>,
+        <span class="string">"fengcai.jpg"</span>,
+        <span class="string">"home.jpg"</span>,
+        <span class="string">"icons.png"</span>,
+        <span class="string">"icons2.png"</span>,
+        <span class="string">"index_bg.jpg"</span>,
+        <span class="string">"jtgk.png"</span>,
+        <span class="string">"link.jpg"</span>,
+        <span class="string">"li-on.png"</span>,
+        <span class="string">"logo.png"</span>,
+        <span class="string">"logo-bg.png"</span>,
+        <span class="string">"logo-bg1.png"</span>,
+        <span class="string">"logo-bg2.png"</span>,
+        <span class="string">"map.jpg"</span>,
+        <span class="string">"pic1.jpg"</span>,
+        <span class="string">"pic2.jpg"</span>,
+        <span class="string">"pic3.jpg"</span>,
+        <span class="string">"pic4.jpg"</span>,
+        <span class="string">"pic5.jpg"</span>,
+        <span class="string">"pic6.jpg"</span>,
+        <span class="string">"pic7.jpg"</span>,
+        <span class="string">"pic8.jpg"</span>,
+        <span class="string">"pp.png"</span>,
+        <span class="string">"tab-active.png"</span>,
+        <span class="string">"tabhead.png"</span>,
+        <span class="string">"tabhead2.png"</span>,
+        <span class="string">"tab-liac.png"</span>,
+        <span class="string">"tab-libg.png"</span>,
+        <span class="string">"title-bg.png"</span>,
+        <span class="string">"txt1.png"</span>,
+        <span class="string">"txt2.png"</span>,
+        <span class="string">"txt-tle.png"</span>,
+        <span class="string">"up.png"</span>,
+        <span class="string">"up2.png"</span>,
+        <span class="string">"asdfaw.jpg"</span>
+];
+
+
+<span class="function"><span class="keyword">function</span> <span class="title">preImg</span>(<span class="params">fn</span>)</span>{
+    <span class="keyword">this</span>.init(fn);
+}
+
+preImg.prototype.init = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>{
+    <span class="keyword">var</span> path = IMG;
+    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;IMG.length;i++){
+        path[i] = IMGPATH + path[i];
+    }    
+    <span class="keyword">this</span>.isLoaded(path,fn);
+}
+
+preImg.prototype.isLoaded = <span class="function"><span class="keyword">function</span>(<span class="params">imgArr,fn</span>)</span>{
+    <span class="keyword">var</span> arr = imgArr,
+        length = arr.length,
+        img = [],
+         n = <span class="number">0</span>,
+         error = <span class="number">0</span>;
+    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;length;i++){
+        img[i] = <span class="keyword">new</span> Image();
+        img[i].src = arr[i];
+        img[i].onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            n++;    
+            <span class="keyword">if</span>(n==length){
+                <span class="built_in">console</span>.log(<span class="string">"加载完毕"</span>,length);
+                fn();    
+            }    
+        }
+        img[i].onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+            n++;
+            error++;    
+            <span class="keyword">if</span>(n==length){
+                <span class="built_in">console</span>.log(<span class="string">"加载完毕但是有"</span>+error+<span class="string">"张图加载失败！"</span>);
+                fn();
+            }
+        }    
+    }    
+}
+</code></pre><p>  其实思路很简单，就是先将需要加载的图片写在一个数组里，然后对这个数组进行遍历，每遍历一次都new一个Image对象，并将它的src设置为当前数组元素的值（这个值其实就是图片的路径）。然后再该image对象的onload事件里进行计数，每onload成功一张图片，n的数量就+1，当然，我们不能排除由于网络问题或者路径写错的情况下图片加载失败。因此如果image加载失败，也就是onerror的时候，n的数量也要自+1，这样在接下来判断n是否等于数组长度的时候就不会出错，导致后续回掉函数无法执行的情况。</p>
+<p>  该插件使用方法也比较简单，由于使用了prototype来新增方法，所以在使用时要new一个preImg()函数。<br>  如下：</p>
+<pre><code><span class="keyword">var</span> preImgLoad = <span class="keyword">new</span> preImg(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+        <span class="comment">//这里是回调函数内容</span>
+    });
+</code></pre><p>  这里的回掉函数，将会在IMG数组里的所有图片加载完成之后执行。</p>
+<p>  原谅我用如此贫瘠的语言和肤浅的代码讲完这篇笔记，哈哈哈。</p>
+
+      </div>
+      <footer class="article-footer">
+        <a data-url="http://mikomoon.com/blog/2015/10/31/imgPreLoad/" data-id="cigdwqfx4000n7kvjexm12rpy" class="article-share-link">分享到</a>
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/js/">js</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+  <section id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="post-imgPreLoad" data-title="图片预加载插件" data-url="http://mikomoon.com/blog/2015/10/31/imgPreLoad/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'mikomoon'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="/"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="/"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="/"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman"><i id="icon-github" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="weibo" href="/"><i id="icon-weibo" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/"><i id="icon-rss" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2015/10/13/关于现状—-—/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">关于现状—_—</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post">
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/10/31/imgPreLoad/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/10/31/imgPreLoad/" class="title">图片预加载插件</a></p>
+              <p class="item-date"><time datetime="2015-10-30T16:38:07.000Z" itemprop="datePublished">10月 31 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/10/13/关于现状—-—/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/生活/">生活</a></p>
+              <p class="item-title"><a href="/blog/2015/10/13/关于现状—-—/" class="title">关于现状—_—</a></p>
+              <p class="item-date"><time datetime="2015-10-13T13:37:32.000Z" itemprop="datePublished">10月 13 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/10/13/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/blog/2015/10/13/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-10-13T13:29:21.027Z" itemprop="datePublished">10月 13 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/timechoose.jpg
+)" alt="iscroll和jq实现安卓时间选择效果" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/" class="title">iscroll和jq实现安卓时间选择效果</a></p>
+              <p class="item-date"><time datetime="2015-03-20T10:54:19.000Z" itemprop="datePublished">3月 20 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/13/CSS3大白机器人/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/baymax.jpg
+)" alt="CSS3大白机器人" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/13/CSS3大白机器人/" class="title">CSS3大白机器人</a></p>
+              <p class="item-date"><time datetime="2015-03-13T08:46:48.000Z" itemprop="datePublished">3月 13 2015</time></p>
+            </div>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">十月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">三月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/02/">二月 2015</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iscroll-js-CSS3/">iscroll js CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/blog/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/iscroll-js-CSS3/" style="font-size: 10px;">iscroll js CSS3</a> <a href="/blog/tags/js/" style="font-size: 10px;">js</a> <a href="/blog/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/blog/tags/移动端/" style="font-size: 10px;">移动端</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Miko shu</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+  <link rel="stylesheet" href="/blog/scrollLoading/style.css" type="text/css">
+  <script src="/blog/scrollLoading/jquery.scrollLoading.js" type="text/javascript"></script>
+  <script src="/blog/scrollLoading/main.js" type="text/javascript"></script>
+
+
+<script src="/blog/js/html-patch.js" type="text/javascript"></script>
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用canvas实现刮奖刮开效果 | Miko的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="目前在html5和css3的热潮下，html页面的效果也是层出不穷，下面我们来介绍使用canvas来模仿刮奖刮开效果。
+原理
+在需要刮出的图片或者文字上方盖上一层灰色或者其他背景的canvas画布，当手指或者鼠标点击画布并移动时，将画布上移动过的轨迹变成透明即可。
+DEMO
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta chars">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用canvas实现刮奖刮开效果">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<meta property="og:url" content="http://mikoshu.me/blog/2015/02/28/使用canvas实现刮奖刮开效果/index.html">
+=======
+<meta property="og:url" content="http://mikomoon.com/blog/2015/02/28/使用canvas实现刮奖刮开效果/index.html">
+>>>>>>> origin/gh-pages
+=======
+<meta property="og:url" content="http://mikomoon.com/blog/blog/2015/02/28/使用canvas实现刮奖刮开效果/">
+>>>>>>> parent of cd175b6... page update
+<meta property="og:site_name" content="Miko的博客">
+<meta property="og:description" content="目前在html5和css3的热潮下，html页面的效果也是层出不穷，下面我们来介绍使用canvas来模仿刮奖刮开效果。
+原理
+在需要刮出的图片或者文字上方盖上一层灰色或者其他背景的canvas画布，当手指或者鼠标点击画布并移动时，将画布上移动过的轨迹变成透明即可。
+DEMO
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta chars">
+<meta property="og:image" content="http://7u2sas.com1.z0.glb.clouddn.com/images/canvas.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用canvas实现刮奖刮开效果">
+<meta name="twitter:description" content="目前在html5和css3的热潮下，html页面的效果也是层出不穷，下面我们来介绍使用canvas来模仿刮奖刮开效果。
+原理
+在需要刮出的图片或者文字上方盖上一层灰色或者其他背景的canvas画布，当手指或者鼠标点击画布并移动时，将画布上移动过的轨迹变成透明即可。
+DEMO
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta chars">
+
+  
+  
+    <link rel="icon" href="http://mikomoon.com/images/miko.ico">
+  
+  <link href='//fonts.useso.com/css?family=Titillium+Web:300,400,600' rel='stylesheet' type='text/css'>
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="wrap">
+    <header id="header">
+  <div id="header-outer" class="outer">
+    <div class="container">
+      <div class="container-inner">
+        <div id="header-title">
+          <h1 class="logo-wrap">
+            <a href="/blog/" class="logo"></a>
+          </h1>
+          
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <h2 class="subtitle-wrap">
+              <p class="subtitle">刘舒的博客</p>
+            </h2>
+          
+=======
+>>>>>>> origin/gh-pages
+=======
+>>>>>>> parent of cd175b6... page update
+        </div>
+        <div id="header-inner" class="nav-container">
+          <a id="main-nav-toggle" class="nav-icon"></a>
+          <div class="nav-container-inner">
+            <ul id="main-nav">
+              
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikomoon.com">主页</a></li>
+              
+                    <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/blog/categories/html/">html</a></li></ul>
+                  
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikoshu.me">关于我</a></li>
+=======
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikomoon.com">关于我</a></li>
+>>>>>>> origin/gh-pages
+=======
+                <li class="main-nav-list-item" ><a class="main-nav-list-link" href="http://mikomoon.com">关于我</a></li>
+>>>>>>> parent of cd175b6... page update
+              
+            </ul>
+            <nav id="sub-nav">
+              <div id="search-form-wrap">
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://mikoshu.me/blog"></form>
+=======
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="sitesearch" value="http://mikomoon.com/blog"></form>
+>>>>>>> origin/gh-pages
+=======
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="搜索"><input type="hidden" name="q" value="site:http://mikomoon.com/blog"></form>
+>>>>>>> parent of cd175b6... page update
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <div class="main-body container-inner">
+        <div class="main-body-inner">
+          <section id="main">
+            <div class="main-body-header">
+
+              <h1 class="header"><a class="page-title-link" href="/blog/categories/html/">html</a></h1>
+            </div>
+            <div class="main-body-content">
+              
+  <article id="post-使用canvas实现刮奖刮开效果" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+      <!--  -->
+      
+        <header class="article-header">
+          
+  
+    <h1 class="article-title" itemprop="name">
+      使用canvas实现刮奖刮开效果
+    </h1>
+  
+
+        </header>
+      
+      <p class="article-byline">
+        <a href="/blog/2015/02/28/使用canvas实现刮奖刮开效果/" class="article-date">
+  <time datetime="2015-02-28T03:51:39.000Z" itemprop="datePublished">2月 28 2015</time>
+</a>
+      </p>
+      <div class="article-entry" itemprop="articleBody">
+        <p><img src="http://7u2sas.com1.z0.glb.clouddn.com/images/canvas.jpg" alt="canvas"><br>目前在html5和css3的热潮下，html页面的效果也是层出不穷，下面我们来介绍使用canvas来模仿刮奖刮开效果。</p>
+<p>原理</p>
+<p>在需要刮出的图片或者文字上方盖上一层灰色或者其他背景的canvas画布，当手指或者鼠标点击画布并移动时，将画布上移动过的轨迹变成透明即可。</p>
+<p>DEMO</p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">title</span>&gt;</span>无标题文档<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css">
+<span class="class">.content</span>,<span class="class">.cover</span><span class="rules">{<span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">400px</span></span></span>; <span class="rule"><span class="attribute">height</span>:<span class="value"><span class="number">400px</span></span></span>; <span class="rule"><span class="attribute">position</span>:<span class="value">absolute</span></span>; <span class="rule"><span class="attribute">left</span>:<span class="value"><span class="number">50%</span></span></span>; <span class="rule"><span class="attribute">top</span>:<span class="value"><span class="number">50%</span></span></span>; <span class="rule"><span class="attribute">margin</span>:<span class="value">-<span class="number">200px</span> <span class="number">0</span> <span class="number">0</span> -<span class="number">200px</span></span></span>;<span class="rule">}</span></span>
+<span class="class">.content</span><span class="rules">{ <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">48px</span></span></span>; <span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">400px</span></span></span>; <span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>;<span class="rule">}</span></span>
+<span class="tag">h3</span><span class="rules">{ <span class="rule"><span class="attribute">text-align</span>:<span class="value">center</span></span>; <span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">200px</span></span></span>;<span class="rule">}</span></span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+ <span class="tag">&lt;<span class="title">h3</span>&gt;</span>快来刮开！！！<span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
+ <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"content"</span> &gt;</span>中奖啦~！<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">canvas</span> <span class="attribute">id</span>=<span class="value">"cover"</span> <span class="attribute">class</span>=<span class="value">"cover"</span> <span class="attribute">width</span>=<span class="value">"400"</span> <span class="attribute">height</span>=<span class="value">"400"</span>&gt;</span><span class="tag">&lt;/<span class="title">canvas</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
+<span class="keyword">var</span> isdown = <span class="literal">false</span>,
+ cover = <span class="built_in">document</span>.getElementById(<span class="string">"cover"</span>),
+
+ covercanvas = cover.getContext(<span class="string">"2d"</span>);
+ <span class="comment">//</span>
+ covercanvas.fillStyle=<span class="string">"transparent"</span>;
+  <span class="comment">//要在fillter（）之前先定义画布背景为透明</span>
+ covercanvas.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">400</span>,<span class="number">400</span>);
+
+ <span class="function"><span class="keyword">function</span> <span class="title">fillter</span><span class="params">( canvas )</span></span>{
+  <span class="comment">//定义画布背景为#ccc和画布大小</span>
+  canvas.fillStyle=<span class="string">"#ccc"</span>;
+  canvas.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">400</span>,<span class="number">400</span>);
+ }
+ <span class="function"><span class="keyword">function</span> <span class="title">isDown</span><span class="params">(e)</span></span>{
+   <span class="comment">//判断鼠标和手指是否按下</span>
+  e.preventDefault();
+  isdown=<span class="literal">true</span>;    
+ }
+ <span class="function"><span class="keyword">function</span> <span class="title">isUp</span><span class="params">(e)</span></span>{
+  <span class="comment">//判断鼠标和手指是否抬起</span>
+  isdown=<span class="literal">false</span>;    
+ }
+ <span class="function"><span class="keyword">function</span> <span class="title">draw</span><span class="params">( e )</span></span>{
+  <span class="comment">//如果isdown为true（即鼠标或手指在画布区域按下）获取其在画布上的位置并画出轨迹</span>
+  e.preventDefault();
+  <span class="keyword">if</span>(isdown){
+   <span class="keyword">if</span>(e.changedTouches){
+    <span class="comment">//判断如果是touch事件（即手指按下）改变event</span>
+                e=e.changedTouches[e.changedTouches.length-<span class="number">1</span>];
+            }
+
+   <span class="keyword">var</span> _height= <span class="built_in">parseInt</span>((<span class="built_in">window</span>.innerHeight-<span class="number">400</span>)/<span class="number">2</span>),
+    _width= <span class="built_in">parseInt</span>((<span class="built_in">window</span>.innerWidth-<span class="number">400</span>)/<span class="number">2</span>),
+    touchTop=e.clientY - _height,
+    touchLeft=e.clientX - _width;
+
+   <span class="keyword">with</span>(covercanvas){
+    <span class="comment">// 画出按下时画布上显示的图案（这里是一个半径为10px的圆形）</span>
+    beginPath();
+    arc(touchLeft, touchTop, <span class="number">10</span>, <span class="number">0</span>, <span class="built_in">Math</span>.PI * <span class="number">2</span>);
+    fill();
+   }    
+  }
+  <span class="comment">//alert(touchTop);</span>
+ }
+ fillter(covercanvas);
+ covercanvas.globalCompositeOperation = <span class="string">'destination-out'</span>;
+ cover.addEventListener(<span class="string">'touchstart'</span>,isDown);
+ cover.addEventListener(<span class="string">'touchmove'</span>,draw);
+ cover.addEventListener(<span class="string">'touchend'</span>,isUp);
+ cover.addEventListener(<span class="string">'mousemove'</span>,draw);
+ cover.addEventListener(<span class="string">'mousedown'</span>,isDown);
+ cover.addEventListener(<span class="string">'mouseup'</span>,isUp);
+
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p><a href="http://7u2sas.com1.z0.glb.clouddn.com/demo/guagua.html" target="_blank">点击查看demo</a></p>
+<p>分析</p>
+<p>demo中在class为content的div上盖上一层灰色的画布，然后通过获取鼠标和手指的坐标计算出在画布位置上的坐标，通过在坐标原点位置画一个半径10px的透明圆形来透过画布，显示出画布下的内容。本demo是用时需要改变的内容为_width，_height,touchTop,touchLeft这几个参数，根据自身画布的位置自行计算即可。由于是长按事件，记得在移动端阻止浏览器默认功能。      </p>
+
+      </div>
+      <footer class="article-footer">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <a data-url="http://mikoshu.me/blog/2015/02/28/使用canvas实现刮奖刮开效果/" data-id="cifpfjpn0000fxgvjctyiy33c" class="article-share-link">分享到</a>
+=======
+        <a data-url="http://mikomoon.com/blog/2015/02/28/使用canvas实现刮奖刮开效果/" data-id="cigdwqfwv000f7kvjv78hkj6l" class="article-share-link">分享到</a>
+>>>>>>> origin/gh-pages
+=======
+        <a data-url="http://mikomoon.com/blog/2015/02/28/使用canvas实现刮奖刮开效果/" data-id="vqw7z57tti7wa8t2" class="article-share-link">分享到</a>
+>>>>>>> parent of cd175b6... page update
+        
+        
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/canvas/">canvas</a></li></ul>
+
+      </footer>
+    </div>
+  </article>
+  
+  
+  <section id="comments">
+    <!-- 多说评论框 start -->
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <div class="ds-thread" data-thread-key="post-使用canvas实现刮奖刮开效果" data-title="使用canvas实现刮奖刮开效果" data-url="http://mikoshu.me/blog/2015/02/28/使用canvas实现刮奖刮开效果/"></div>
+=======
+    <div class="ds-thread" data-thread-key="post-使用canvas实现刮奖刮开效果" data-title="使用canvas实现刮奖刮开效果" data-url="http://mikomoon.com/blog/2015/02/28/使用canvas实现刮奖刮开效果/"></div>
+>>>>>>> origin/gh-pages
+=======
+    <div class="ds-thread" data-thread-key="post-使用canvas实现刮奖刮开效果" data-title="使用canvas实现刮奖刮开效果" data-url="http://mikomoon.com/blog/2015/02/28/使用canvas实现刮奖刮开效果/"></div>
+>>>>>>> parent of cd175b6... page update
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'mikomoon'};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+  </section>
+  
+  
+
+            </div>
+          </section>
+          <aside id="sidebar">
+  <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="sidebar-top">
+    <p>关注我 :</p>
+    <ul class="social-links">
+      
+        <li><a class="social-tooltip" title="twitter" href="/blog/"><i id="icon-twitter" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="facebook" href="/blog/"><i id="icon-facebook" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="google_plus" href="/blog/"><i id="icon-google_plus" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman"><i id="icon-github" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="weibo" href="/blog/"><i id="icon-weibo" class="icon"></i></a></li>
+      
+        <li><a class="social-tooltip" title="rss" href="/blog/"><i id="icon-rss" class="icon"></i></a></li>
+      
+    </ul>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/blog/2015/03/12/-CSS3-JS实现时钟效果/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <p class="article-nav-title">
+        
+          [CSS3+JS实现时钟效果]
+        
+      </p>
+      <i class="icon" id="icon-chevron-right"></i>
+    </a>
+  
+  
+    <a href="/blog/2015/02/26/Javascript严格模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <p class="article-nav-title">Javascript严格模式【转】</p>
+      <i class="icon" id="icon-chevron-left"></i>
+    </a>
+  
+</nav>
+
+  
+  <div class="widgets-container">
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul id="recent-post">
+        
+          <li>
+            <div class="item-thumbnail">
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+              <a href="/blog/2015/10/31/imgPreLoad/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/10/31/imgPreLoad/" class="title">图片预加载插件</a></p>
+              <p class="item-date"><time datetime="2015-10-30T16:38:07.000Z" itemprop="datePublished">10月 31 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+>>>>>>> origin/gh-pages
+              <a href="/blog/2015/10/13/关于现状—-—/" class="thumbnail">
+=======
+              <a href="/blog/2015/06/01/-超简易瀑布流/" class="thumbnail">
+>>>>>>> parent of cd175b6... page update
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/waterfall.jpg
+)" alt="[超简易瀑布流]" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/06/01/-超简易瀑布流/" class="title">[超简易瀑布流]</a></p>
+              <p class="item-date"><time datetime="2015-06-01T09:35:23.000Z" itemprop="datePublished">6月 1 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/05/12/使用css3制作圆形导航/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/step0.png
+)" alt="使用css3制作圆形导航" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/05/12/使用css3制作圆形导航/" class="title">使用css3制作圆形导航</a></p>
+              <p class="item-date"><time datetime="2015-05-12T03:42:42.000Z" itemprop="datePublished">5月 12 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/20/hello-world/" class="thumbnail">
+  
+    <span class="thumbnail-image thumbnail-none"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"></p>
+              <p class="item-title"><a href="/blog/2015/03/20/hello-world/" class="title">Hello World</a></p>
+              <p class="item-date"><time datetime="2015-03-20T11:04:50.432Z" itemprop="datePublished">3月 20 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/timechoose.jpg
+)" alt="iscroll和jq实现安卓时间选择效果" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/20/iscroll和jq实现安卓时间选择效果/" class="title">iscroll和jq实现安卓时间选择效果</a></p>
+              <p class="item-date"><time datetime="2015-03-20T10:54:19.000Z" itemprop="datePublished">3月 20 2015</time></p>
+            </div>
+          </li>
+        
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/13/CSS3大白机器人/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/baymax.jpg
+)" alt="CSS3大白机器人" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/13/CSS3大白机器人/" class="title">CSS3大白机器人</a></p>
+              <p class="item-date"><time datetime="2015-03-13T08:46:48.000Z" itemprop="datePublished">3月 13 2015</time></p>
+            </div>
+          </li>
+        
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <li>
+            <div class="item-thumbnail">
+              <a href="/blog/2015/03/12/-CSS3-JS实现时钟效果/" class="thumbnail">
+  
+    <span style="background-image:url(http://7u2sas.com1.z0.glb.clouddn.com/images/clock.jpg
+)" alt="[CSS3+JS实现时钟效果]" class="thumbnail-image"></span>
+  
+
+</a>
+            </div>
+            <div class="item-inner">
+              <p class="item-category"><a class="article-category-link" href="/blog/categories/html/">html</a></p>
+              <p class="item-title"><a href="/blog/2015/03/12/-CSS3-JS实现时钟效果/" class="title">[CSS3+JS实现时钟效果]</a></p>
+              <p class="item-date"><time datetime="2015-03-12T09:27:33.000Z" itemprop="datePublished">3月 12 2015</time></p>
+            </div>
+          </li>
+        
+=======
+>>>>>>> origin/gh-pages
+=======
+>>>>>>> parent of cd175b6... page update
+      </ul>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+=======
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/blog/categories/生活/">生活</a><span class="category-list-count">1</span></li></ul>
+>>>>>>> origin/gh-pages
+=======
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/blog/categories/html/">html</a><span class="category-list-count">8</span></li></ul>
+>>>>>>> parent of cd175b6... page update
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">十月 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">三月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/02/">二月 2015</a><span class="archive-list-count">4</span></li></ul>
+=======
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/10/">十月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">三月 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/02/">二月 2015</a><span class="archive-list-count">4</span></li></ul>
+>>>>>>> origin/gh-pages
+=======
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/06/">June 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li></ul>
+>>>>>>> parent of cd175b6... page update
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iscroll-js-CSS3/">iscroll js CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+=======
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iscroll-js-CSS3/">iscroll js CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+>>>>>>> origin/gh-pages
+=======
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/CSS3/">CSS3</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Javascript/">Javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/canvas/">canvas</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/iscroll-js-CSS3/">iscroll js CSS3</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/移动端/">移动端</a><span class="tag-list-count">1</span></li></ul>
+>>>>>>> parent of cd175b6... page update
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <a href="/blog/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/iscroll-js-CSS3/" style="font-size: 10px;">iscroll js CSS3</a> <a href="/blog/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/blog/tags/移动端/" style="font-size: 10px;">移动端</a>
+=======
+      <a href="/blog/tags/CSS3/" style="font-size: 20px;">CSS3</a> <a href="/blog/tags/Javascript/" style="font-size: 10px;">Javascript</a> <a href="/blog/tags/canvas/" style="font-size: 10px;">canvas</a> <a href="/blog/tags/iscroll-js-CSS3/" style="font-size: 10px;">iscroll js CSS3</a> <a href="/blog/tags/js/" style="font-size: 10px;">js</a> <a href="/blog/tags/杂谈/" style="font-size: 10px;">杂谈</a> <a href="/blog/tags/移动端/" style="font-size: 10px;">移动端</a>
+>>>>>>> origin/gh-pages
+=======
+      <a href="/blog/tags/CSS3/" style="font-size: 20.00px;">CSS3</a><a href="/blog/tags/Javascript/" style="font-size: 10.00px;">Javascript</a><a href="/blog/tags/canvas/" style="font-size: 10.00px;">canvas</a><a href="/blog/tags/iscroll-js-CSS3/" style="font-size: 10.00px;">iscroll js CSS3</a><a href="/blog/tags/javascript/" style="font-size: 10.00px;">javascript</a><a href="/blog/tags/移动端/" style="font-size: 10.00px;">移动端</a>
+>>>>>>> parent of cd175b6... page update
+    </div>
+  </div>
+
+    
+      
+  <div class="widget-wrap">
+    <h3 class="widget-title">链接</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="http://hexo.io">Hexo</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+    
+  </div>
+</aside>
+        </div>
+      </div>
+    </div>
+    <footer id="footer">
+  
+  <div class="container">
+    <div class="container-inner">
+      <a id="back-to-top" href="javascript:;"><i class="icon" id="icon-angle-up"></i></a>
+      <div class="credit">
+        <h1 class="logo-wrap">
+          <a href="/blog/" class="logo"></a>
+        </h1>
+        <p>&copy; 2015 Miko shu</p>
+        <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+    
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script> -->
+<script src="//libs.useso.com/js/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/blog/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/blog/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+
+
+<script src="/blog/js/html-patch.js" type="text/javascript"></script>
+
+<script src="/blog/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
