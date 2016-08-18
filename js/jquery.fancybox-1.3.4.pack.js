@@ -1,4 +1,9 @@
 /*
+ * Author: Miko
+ * Version: 0.1.0
+ * Compile Date: 2015-10-13 14:23
+*/ 
+/*
  * FancyBox - jQuery Plugin
  * Simple and fancy lightbox alternative
  *
